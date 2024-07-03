@@ -99,6 +99,14 @@ remainder of the project to make up for past negative variances.
 }
 }
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/david-hammond/pmev}
+  \item Report bugs at \url{https://github.com/david-hammond/pmev}
+}
+
+}
 \author{
 \strong{Maintainer}: David Hammond \email{anotherdavidhammond@gmail.com}
 
