@@ -6,7 +6,8 @@
 #' \itemize{
 #'   \item \strong{start:} Start Date of the activity.
 #'   \item \strong{end:} End Date of the activity.
-#'   \item \strong{progress:} Proportion between 0 and 1 representing percentage completed for each activity (1 = 100% complete)
+#'   \item \strong{progress:} Proportion between 0 and 1 representing percentage
+#'    completed for each activity (1 = 100% complete)
 #'   \item \strong{planned_cost:} The planned costs of each activity
 #' }
 #'

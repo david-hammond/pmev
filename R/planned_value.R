@@ -13,17 +13,16 @@
 
 
 
-get_planned_value = function(df, project_value){
-  start_at_zero = data.frame(end = min(df$start), planned_value = 0)
-  df = df %>% select(.data$end, .data$planned_value) %>%
+get_planned_value <- function(df, project_value) {
+  start_at_zero <- data.frame(end = min(df$start), planned_value = 0)
+  df <- df %>% select(.data$end, .data$planned_value) %>%
     group_by(.data$end) %>%
     summarise(planned_value = sum(.data$planned_value)) %>%
     ungroup() %>%
     mutate(planned_value = cumsum(.data$planned_value))
-  df = start_at_zero %>% rbind(df)
-  df = data.frame(end = seq.Date(min(df$end), max(df$end), "days")) %>%
+  df <- start_at_zero %>% rbind(df)
+  df <- data.frame(end = seq.Date(min(df$end), max(df$end), "days")) %>%
     left_join(df, by = "end") %>%
     mutate(planned_value = na.approx(.data$planned_value))
   return(df)
 }
-

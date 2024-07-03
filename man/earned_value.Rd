@@ -19,7 +19,8 @@ earned_value(
 
 \item{end}{End Date of activity}
 
-\item{progress}{Proportion between 0 and 1 representing percentage completed for each activity (1 = 100\% complete)}
+\item{progress}{Proportion between 0 and 1 representing percentage completed
+for each activity (1 = 100\% complete)}
 
 \item{planned_cost}{The planned costs of each activity}
 
@@ -41,19 +42,31 @@ A list of two data frames:
 \itemize{
 \item \strong{date:} Date of calculation
 \item \strong{total_value:} Total Value of the Project.
-\item \strong{budget_at_completion:} Aggregate costs of all of the task budgets
-\item \strong{project_complete:} Project Complete based on Earned Value and total Project Value.
-\item \strong{schedule_complete:} The difference in Earned Value and Planned value as a proportion of the Total Value.
-\item \strong{planned_value:} The amount of the project that is supposed to have been completed.
-\item \strong{earned_value:} The amount of the project that is actually completed
-\item \strong{actual_cost:} Actual Cost is the actual to-date cost of the project.
-\item \strong{schedule_variance:} The amount that the project is ahead or behind schedule.
+\item \strong{budget_at_completion:} Aggregate costs of all of the task
+budgets
+\item \strong{project_complete:} Project Complete based on Earned Value and
+total Project Value.
+\item \strong{schedule_complete:} The difference in Earned Value and Planned
+value as a proportion of the Total Value.
+\item \strong{planned_value:} The amount of the project that is supposed to
+have been completed.
+\item \strong{earned_value:} The amount of the project that is actually
+completed
+\item \strong{actual_cost:} Actual Cost is the actual to-date cost of the
+project.
+\item \strong{schedule_variance:} The amount that the project is ahead or
+behind schedule.
 \item \strong{cost_variance:} How far the task is over or under budget.
-\item \strong{cost_performance_index:} Relative amount of the variance to Planned Value.
-\item \strong{estimate_at_completion:} What the overall project budget will be if everything else went according to plan.
-\item \strong{estimate_to_complete:} How much money must be spent from this point forward, to complete the project.
-\item \strong{variance_at_completion:} The forecasted cost variance (CV) at the completion of the project.
-\item \strong{to_complete_performance_index:} What CPI would be necessary to finish the project on budget.
+\item \strong{cost_performance_index:} Relative amount of the variance to
+Planned Value.
+\item \strong{estimate_at_completion:} What the overall project budget will
+be if everything else went according to plan.
+\item \strong{estimate_to_complete:} How much money must be spent from this
+point forward, to complete the project.
+\item \strong{variance_at_completion:} The forecasted cost variance (CV) at
+the completion of the project.
+\item \strong{to_complete_performance_index:} What CPI would be necessary
+to finish the project on budget.
 }
 }
 }
@@ -67,7 +80,7 @@ earned_value(start = project$start,
               end = project$end,
               progress = project$progress,
               planned_cost = project$planned_cost,
-              project_value = 164000,
-              cost_to_date = 7500,
+              project_value = 150000,
+              cost_to_date = 10000,
               date = "2024-07-03")
 }
