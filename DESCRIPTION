@@ -5,7 +5,7 @@ Authors@R: person("David", "Hammond", email = "anotherdavidhammond@gmail.com", r
 Author: David Hammond [aut, cre]
 URL: https://github.com/david-hammond/pmev
 BugReports: https://github.com/david-hammond/pmev
-Maintainer: David Hammond <danotherdavidhammond@gmail.com>
+Maintainer: David Hammond <anotherdavidhammond@gmail.com>
 Description: Given a project schedule and associated costs, this package calculates the earned value to date. It in an implementation of Project Management Body of Knowledge (PMBOK) methodologies.
 License: MIT + file LICENSE
 Suggests: 
