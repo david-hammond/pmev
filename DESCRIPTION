@@ -1,6 +1,6 @@
 Package: pmev
 Title: Calculates Earned Value for a Project Schedule
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: person("David", "Hammond", email = "anotherdavidhammond@gmail.com", role = c("aut", "cre"))
 Author: David Hammond [aut, cre]
 URL: https://github.com/david-hammond/pmev
@@ -17,7 +17,6 @@ RoxygenNote: 7.3.2
 Imports: 
     dplyr,
     lubridate,
-    magrittr,
     zoo,
     rlang,
     ggplot2,

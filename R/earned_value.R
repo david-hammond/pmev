@@ -76,20 +76,20 @@ earned_value <- function(start,
                          date = today()) {
   date <- as.Date(date)
   df <- data.frame(start = as.Date(start), end = as.Date(end), progress,
-                   planned_cost) %>%
+                   planned_cost) |>
     mutate(planned_value =
              project_value * .data$planned_cost / sum(.data$planned_cost))
   planned_value <- get_planned_value(df)
+  pos <- which(abs(planned_value$end - date) ==
+                 min(abs(planned_value$end - date)))
+  tmp <- planned_value$planned_value[pos]
   earned_value <- data.frame(date = date,
                              total_value = project_value,
                              budget_at_completion = sum(planned_cost),
-                             planned_value =
-                               planned_value$planned_value[
-                                 which(abs(planned_value$end - date)
-                                       == min(abs(planned_value$end - date)))],
+                             planned_value = tmp,
                              earned_value = sum(df$progress * df$planned_value),
                              actual_cost = cost_to_date)
-  earned_value <- earned_value %>%
+  earned_value <- earned_value |>
     mutate(schedule_variance = .data$earned_value - .data$planned_value,
            cost_variance = .data$earned_value - .data$actual_cost,
            cost_performance_index = .data$earned_value / .data$actual_cost,
