@@ -22,22 +22,22 @@ test_that("panned_value works", {
   expect_s3_class(expected$pv, "data.frame")
 })
 
-test_that("earnedvalue$new works", {
+test_that("ev$new works", {
   data(project)
-  expected <- earnedvalue$new(start = project$start,
+  expected <- ev$new(start = project$start,
                            end = project$end,
                            progress = project$progress,
                            planned_cost = project$planned_cost,
                            project_value = 164000,
                            cost_to_date = 7500,
                            date = "2024-07-03")
-  expect_s3_class(expected, "earnedvalue")
+  expect_s3_class(expected, "ev")
 })
 
 test_that("plot works", {
   require(vdiffr)
   data(project)
-  expected <- earnedvalue$new(start = project$start,
+  expected <- ev$new(start = project$start,
                               end = project$end,
                               progress = project$progress,
                               planned_cost = project$planned_cost,

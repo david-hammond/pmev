@@ -14,7 +14,7 @@
 #'
 #' @examples
 #' data(project)
-#' tmp <- earnedvalue$new(start = project$start,
+#' tmp <- ev$new(start = project$start,
 #'                        end = project$end,
 #'                        progress = project$progress,
 #'                        planned_cost = project$planned_cost,
@@ -34,7 +34,7 @@
 
 # https://www.projectengineer.net/the-earned-value-formulas/
 
-earnedvalue <- R6::R6Class("earnedvalue",
+ev <- R6::R6Class("ev",
                        lock_objects = FALSE,
                        public = list(
                          #' @field planned_value (`numeric()`)\cr
@@ -42,7 +42,7 @@ earnedvalue <- R6::R6Class("earnedvalue",
                          planned_value = NULL,
                          #' @field earned_value (`numeric()`)\cr
                          #'   Earned value calculations
-                         #' @return A new `earnedvalue` object.
+                         #' @return A new `ev` object.
                          earned_value = NULL,
                          initialize = function(start,
                                                end,
