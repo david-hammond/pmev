@@ -1,6 +1,6 @@
 Package: pmev
 Title: Calculates Earned Value for a Project Schedule
-Version: 0.0.3
+Version: 0.1.2
 Authors@R: person("David", "Hammond", email = "anotherdavidhammond@gmail.com", role = c("aut", "cre"))
 Author: David Hammond [aut, cre]
 URL: https://github.com/david-hammond/pmev

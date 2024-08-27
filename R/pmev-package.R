@@ -2,7 +2,7 @@
 #'
 #' \code{pmev} implements project management tracking metrics as outlined in the
 #'  Project Management Body of Knowledge (PMBOK) manual which can be found
-#'  \href{https://www.pmi.org/pmbok-guide-standards/foundational/pmbok}{here}.
+#'  \href{https://en.wikipedia.org/wiki/Project_Management_Body_of_Knowledge}{here}.
 #'
 #' From an inputted list of project activities, start and end dates,
 #' planned costs, progress and costs to date, it calculates the following
