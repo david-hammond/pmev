@@ -17,12 +17,13 @@ which can be found .
 
 ## Installation
 
-You can install the development version of pmev from
-[GitHub](https://github.com/) with:
+You can install the development version of `pmev` using either:
 
 ``` r
+# install.packages("pmev")
+# Or the development version at
 # install.packages("devtools")
-devtools::install_github("david-hammond/pmev")
+# devtools::install_github("david-hammond/pmev")
 ```
 
 ## Example
