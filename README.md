@@ -30,39 +30,28 @@ devtools::install_github("david-hammond/pmev")
 ``` r
 library(pmev)
 data(project)
-ev = earned_value(start = project$start,
-               end = project$end,
-               progress = project$progress,
-               planned_cost = project$planned_cost,
-               project_value = 150000,
-               cost_to_date = 10000,
-               date = "2024-07-03")
+earnedvalue <- ev$new(start = project$start,
+                       end = project$end,
+                       progress = project$progress,
+                       planned_cost = project$planned_cost,
+                       project_value = 150000,
+                       cost_to_date = 10000,
+                       date = "2024-07-03")
+print(earnedvalue$earned_value)
+#>         date total_value budget_at_completion project_complete
+#> 1 2024-07-03      150000                47934             0.09
+#>   schedule_complete planned_value earned_value actual_cost schedule_variance
+#> 1             -0.08       25144.5     13878.46       10000         -11266.04
+#>   cost_variance cost_performance_index estimate_at_completion
+#> 1       3878.46                   1.39               108081.2
+#>   estimate_to_complete variance_at_completion to_complete_performance_index
+#> 1             98081.17              -60147.17                          0.97
 ```
 
 The Earned Value can then be plotted in the following way.
 
 ``` r
-library(ggplot2)
-library(dplyr)
-library(lubridate)
-pvalue = data.frame(date = ev$pv$end, type = 'Planned Value', value = ev$pv$planned_value)
-evalue = rbind(pvalue[1,] %>% mutate(type = "Earned Value"), data.frame(date = ev$ev$date,
-                                                                            type = 'Earned Value',
-                                                                            value = ev$ev$earned_value))
-ac = rbind(pvalue[1,] %>% mutate(type = "Actual Cost"), data.frame(date = ev$ev$date,
-                                                                           type = 'Actual Cost',
-                                                                           value = ev$ev$actual_cost))
-evalue = pvalue %>% rbind(evalue) %>% rbind(ac)
-p = ggplot(evalue, aes(date, value, colour = type)) + geom_line(linewidth = 1.5) +
-              scale_y_continuous(labels = scales::dollar, name = "Total Value",
-                                 sec.axis = sec_axis(~ . / max(pvalue$value),
-                                                     labels = scales::label_percent())) +
-              labs(colour = "", title = "Earned Value Chart", x = "") + theme_bw() +
-              theme(legend.position = c(0.8, 0.2)) +
-              geom_vline(xintercept = ev$ev$date, linetype = "dashed", color = "cornflowerblue") +
-              annotate("text", x = ev$ev$date + days(1), y = max(evalue$value),
-                       label = "Today", hjust = 0, vjust = 1.5, color = "cornflowerblue")
-p
+plot(earnedvalue)
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
