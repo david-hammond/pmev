@@ -4,7 +4,7 @@ Version: 0.1.2
 Authors@R: person("David", "Hammond", email = "anotherdavidhammond@gmail.com", role = c("aut", "cre"))
 Author: David Hammond [aut, cre]
 URL: https://github.com/david-hammond/pmev
-BugReports: https://github.com/david-hammond/pmev
+BugReports: https://github.com/david-hammond/pmev/issues
 Maintainer: David Hammond <anotherdavidhammond@gmail.com>
 Description: Given a project schedule and associated costs, this package calculates the earned value to date. It is an implementation of Project Management Body of Knowledge (PMBOK) methodologies (reference Project Management Institute. (2021). A guide to the Project Management Body of Knowledge (PMBOK guide) (7th ed.). Project Management Institute, Newtown Square, PA, ISBN 9781628256673 (pdf)).
 License: MIT + file LICENSE

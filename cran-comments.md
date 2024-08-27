@@ -72,3 +72,17 @@ On running:
 
 I receive no errors.
 
+## Test 7: Rhub
+
+I run `rhub::rhub_setup()` and `rhub::rhub_doctor()`
+
+After this all `rhub::rhub_check()` are successful except for:
+
+-   `c23` Error: ! error in pak subprocess Caused by error in `file(con, "rb")`: ! cannot open the connection
+
+    -   Ignoring as this seems to be a container issue
+
+
+-   `rchk` Error: bcheck output file does not exist
+
+    -   Ignoring again as this seems a container issue.
