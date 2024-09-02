@@ -93,14 +93,14 @@ earned_value <- function(start,
     mutate(schedule_variance = .data$earned_value - .data$planned_value,
            cost_variance = .data$earned_value - .data$actual_cost,
            cost_performance_index = .data$earned_value / .data$actual_cost,
-           estimate_at_completion = project_value /
+           estimate_at_completion = .data$budget_at_completion /
              .data$cost_performance_index,
            estimate_to_complete = .data$estimate_at_completion - cost_to_date,
            variance_at_completion = .data$budget_at_completion -
              .data$estimate_at_completion,
            to_complete_performance_index =
-             (project_value - .data$earned_value) /
-             (project_value - cost_to_date),
+             (.data$estimate_at_completion - .data$earned_value) /
+             (.data$estimate_at_completion - cost_to_date),
            project_complete = .data$earned_value / project_value,
            schedule_complete = .data$schedule_variance / project_value)
   earned_value <- earned_value[, c("date",
